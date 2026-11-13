@@ -1,206 +1,117 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="KABKA Photography & Design – grafický dizajn, vizuálna identita, tlačoviny a fotografia.">
-  <meta name="theme-color" content="#f6f3ed">
-  <title>KABKA — Photography & Design</title>
+  <title>KABKA – fotografia a grafický dizajn | Katarína Babálová</title>
+  <meta name="description" content="Vitajte u KABKA – iná a inak. Fotografie a grafický dizajn Kataríny Babálovej, Bratislava a Trenčín.">
+  <meta name="author" content="Katarína Babálová">
+  <meta property="og:title" content="KABKA – fotografia a grafický dizajn">
+  <meta property="og:description" content="Iná a inak. Fotografie a grafika Kataríny Babálovej z Bratislavy a Trenčína.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kabkapd.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kabkapd.com/">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --paper: #ffffff;
-      --ink: #111111;
-      --muted: #777777;
-      --orange: #111111;
-      --lime: #eeeeee;
-      --blue: #e8e8e8;
-      --line: rgba(32,33,30,.16);
-      --radius: 22px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--paper); color: var(--ink); font-family: "DM Sans", sans-serif; }
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; }
-    .wrap { width: min(1160px, calc(100% - 48px)); margin: auto; }
-    header { position: sticky; top: 0; z-index: 20; background: rgba(246,243,237,.9); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
-    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { font: 800 19px/1 "Manrope", sans-serif; letter-spacing: -.07em; }
-    .brand span { color: #111111; }
-    nav { display: flex; align-items: center; gap: clamp(16px, 3vw, 34px); font-size: 12px; text-transform: uppercase; letter-spacing: .12em; }
-    nav a { transition: color .2s; } nav a:hover { color: #111111; }
-    .menu { display: none; border: 1px solid var(--line); border-radius: 50px; padding: 10px 14px; background: transparent; }
-    .hero { padding: 82px 0 76px; position: relative; overflow: hidden; }
-    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 52px; align-items: center; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 10px; text-transform: uppercase; letter-spacing: .16em; font-size: 11px; color: var(--muted); }
-    .dot { width: 8px; height: 8px; border-radius: 50%; background: #dcdcdc; display: inline-block; }
-    h1 { font: 500 clamp(54px, 8vw, 104px)/.94 "Manrope", sans-serif; letter-spacing: -.085em; margin: 25px 0 24px; }
-    h1 em { color: #111111; font-style: normal; }
-    .hero-copy { max-width: 450px; color: var(--muted); font-size: 16px; line-height: 1.75; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 50px; padding: 14px 21px; font-size: 12px; font-weight: 700; letter-spacing: .04em; transition: transform .2s, background .2s; }
-    .btn:hover { transform: translateY(-3px); }
-    .btn-dark { background: var(--ink); color: white; }
-    .btn-light { border: 1px solid var(--line); }
-    .hero-art { min-height: 430px; position: relative; }
-    .shape-main { position: absolute; inset: 24px 36px 18px 26px; border-radius: 48% 48% 24px 24px; background: #e7e7e7; overflow: hidden; transform: rotate(3deg); }
-    .shape-main:before { content: "K"; position: absolute; font: 800 360px/.8 "Manrope"; letter-spacing: -.14em; color: #ffffff; left: 18%; top: 17%; transform: rotate(-8deg); }
-    .shape-main:after { content: ""; position: absolute; width: 170px; height: 170px; border-radius: 50%; background: #dcdcdc; right: -25px; bottom: -22px; }
-    .sticker { position: absolute; right: 0; top: 0; width: 116px; height: 116px; border-radius: 50%; background: #eeeeee; display: grid; place-items: center; text-align: center; font: 800 12px/1.3 "Manrope"; text-transform: uppercase; transform: rotate(12deg); z-index: 2; }
-    .scribble { position: absolute; bottom: 4px; left: 0; background: white; padding: 15px 20px; border-radius: 14px; box-shadow: 0 12px 35px #20211e14; font-size: 12px; transform: rotate(-5deg); z-index: 3; }
-    .ticker { background: #eeeeee; padding: 15px 0; overflow: hidden; white-space: nowrap; font: 700 13px "Manrope"; letter-spacing: .12em; text-transform: uppercase; }
-    .ticker span { padding: 0 22px; }
-    section { padding: 92px 0; }
-    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 34px; }
-    .kicker { color: #111111; font-size: 11px; text-transform: uppercase; letter-spacing: .16em; font-weight: 700; }
-    h2 { font: 500 clamp(38px, 5vw, 62px)/1 "Manrope"; letter-spacing: -.07em; margin: 12px 0 0; }
-    .section-note { max-width: 330px; color: var(--muted); font-size: 13px; line-height: 1.7; }
-    .work-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
-    .project { position: relative; min-height: 310px; border-radius: var(--radius); overflow: hidden; display: flex; align-items: end; padding: 24px; isolation: isolate; }
-    .project:before { content: ""; position: absolute; inset: 0; z-index: -1; transition: transform .5s; }
-    .project:hover:before { transform: scale(1.06); }
-    .project:nth-child(1) { grid-column: span 7; min-height: 390px; }
-    .project:nth-child(2) { grid-column: span 5; }
-    .project:nth-child(3) { grid-column: span 5; }
-    .project:nth-child(4) { grid-column: span 7; }
-    .project:nth-child(1):before { background: linear-gradient(135deg,#eeeeee,#d7d7d7 48%,#f8f8f8); }
-    .project:nth-child(2):before { background: linear-gradient(145deg,#222222,#777777 55%,#dddddd); }
-    .project:nth-child(3):before { background: radial-gradient(circle at 50% 45%,#ffffff 0 20%,transparent 21%),linear-gradient(135deg,#eeeeee,#bdbdbd); }
-    .project:nth-child(4):before { background: linear-gradient(120deg,#333333,#888888 55%,#eeeeee); }
-    .project .graphic { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; }
-    .project .graphic b { font: 800 clamp(65px, 12vw, 150px)/.8 "Manrope"; letter-spacing: -.12em; color: rgba(255,255,255,.8); text-shadow: 0 8px 30px #00000012; }
-    .project:nth-child(2) .graphic b { font-size: clamp(55px,8vw,100px); color: #ffffff; letter-spacing: -.08em; }
-    .project:nth-child(3) .graphic b { color: #333333; }
-    .project:nth-child(4) .graphic b { color: #ffffff; }
-    .project-label { background: rgba(255,255,255,.88); backdrop-filter: blur(10px); padding: 12px 15px; border-radius: 12px; }
-    .project-label strong { display: block; font: 700 14px "Manrope"; }
-    .project-label small { display: block; color: var(--muted); margin-top: 4px; font-size: 11px; }
-    .about { background: #e9e6df; }
-    .about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; align-items: center; }
-    .about-mark { background: #222222; border-radius: 50% 50% 20px 20px; aspect-ratio: 4/4.4; display: grid; place-items: center; position: relative; overflow: hidden; }
-    .about-mark:before { content: "KABKA"; font: 800 clamp(45px,7vw,90px)/.8 "Manrope"; color: #ffffff; letter-spacing: -.1em; transform: rotate(-90deg); }
-    .about-mark:after { content: "✳"; position: absolute; font-size: 100px; color: #ffffff; right: 12px; top: 8px; }
-    .about-text { color: #65655f; font-size: 15px; line-height: 1.85; max-width: 600px; }
-    .services { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 30px; }
-    .service { border-top: 1px solid var(--line); padding: 17px 4px; }
-    .service b { display: block; font: 700 14px "Manrope"; margin-bottom: 7px; }
-    .service span { color: var(--muted); font-size: 12px; line-height: 1.6; }
-    .contact { background: var(--ink); color: var(--paper); }
-    .contact .kicker { color: #ffffff; }
-    .contact-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 50px; align-items: end; }
-    .contact h2 { font-size: clamp(48px,7vw,88px); }
-    .contact p { color: #b6b5ad; line-height: 1.7; max-width: 430px; }
-    .contact-link { display: inline-block; font: 500 clamp(18px,3vw,27px) "Manrope"; border-bottom: 1px solid var(--orange); padding-bottom: 8px; margin-top: 15px; }
-    .socials { display: flex; gap: 10px; margin-top: 28px; }
-    .socials a { border: 1px solid #ffffff40; padding: 12px 16px; border-radius: 50px; font-size: 12px; }
-    footer { background: var(--ink); color: #898981; padding: 22px 0 28px; border-top: 1px solid #ffffff20; font-size: 11px; }
-    footer .wrap { display: flex; justify-content: space-between; gap: 20px; }
-    @media (max-width: 760px) {
-      .wrap { width: min(100% - 32px, 560px); }
-      .nav { min-height: 68px; } .menu { display: block; }
-      nav { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--paper); padding: 22px 24px; border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; }
-      nav.open { display: flex; }
-      .hero { padding: 58px 0 50px; } .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 30px; }
-      .hero-art { min-height: 330px; } .shape-main { inset: 15px 28px 10px 25px; }
-      .shape-main:before { font-size: 280px; }
-      section { padding: 68px 0; } .section-head { display: block; } .section-note { margin-top: 18px; }
-      .project:nth-child(n) { grid-column: span 12; min-height: 280px; }
-      .services { grid-template-columns: 1fr; gap: 0; }
-      footer .wrap { flex-direction: column; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
-  <header>
-    <div class="wrap nav">
-      <a class="brand" href="#top">KABKA<span>✳</span></a>
-      <button class="menu" aria-label="Otvoriť menu" onclick="document.querySelector('nav').classList.toggle('open')">MENU ☰</button>
-      <nav>
-        <a href="#projekty">Projekty</a>
-        <a href="#o-mne">O mne</a>
-        <a href="#sluzby">Čomu sa venujem</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
-    </div>
-  </header>
+  <div class="page">
+    <header class="wrap">
+      <div class="site-header">
+        <a class="brand" href="/" aria-label="KABKA – úvod">
+          <img src="/assets/img/kabka-logo.png" alt="">
+          <span class="word">kabka</span>
+        </a>
+        <nav class="site-nav">
+          <a class="nav-link" href="/grafika.html">Grafika</a>
+          <a class="nav-link" href="/fotografie.html">Fotografie</a>
+          <a class="nav-link" href="/kontakt.html">Kontakt</a>
+        </nav>
+      </div>
+    </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <div class="eyebrow"><i class="dot"></i> Photography · Graphic design · Ideas</div>
-          <h1>Vizuálne<br><em>nápady.</em><br>Silný dojem.</h1>
-          <p class="hero-copy">Ahoj, som KABKA. Tvorím grafiku, vizuálne identity a fotografie s citom pre detail, farby a dobrý nápad.</p>
+    <main class="wrap">
+      <section class="hero">
+        <div class="fade-up">
+          <p class="eyebrow">Photography &amp; design</p>
+          <h1 class="display">Vitajte<span class="accent-dot">.</span></h1>
+          <p class="display sub muted">kabka — <span class="marker" style="color:var(--ink)">iná a inak</span></p>
+          <p class="lead intro">
+            Volám sa Katarína Babálová. Fotím ľudí a ich momenty a tvorím grafiku pre firmy a
+            produkty — kreatívne, jednoducho a krásne.
+          </p>
+          <p class="muted" style="margin-top:.75rem;font-size:.875rem">Bratislava / Trenčín</p>
           <div class="hero-actions">
-            <a class="btn btn-dark" href="#projekty">Pozrieť portfólio ↗</a>
-            <a class="btn btn-light" href="#kontakt">Ozvi sa mi</a>
+            <a class="btn btn-dark" href="https://www.instagram.com/kabkapd" target="_blank" rel="noreferrer">
+              Portfólio na Instagrame
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a class="btn btn-outline" href="/kontakt.html">Napíšte mi</a>
           </div>
         </div>
-        <div class="hero-art" aria-label="Abstraktná grafická ilustrácia">
-          <div class="shape-main"></div>
-          <div class="sticker">Tvorím<br>po svojom<br>✳</div>
-          <div class="scribble">Malé detaily. Veľké nápady.</div>
-        </div>
-      </div>
-    </section>
-
-    <div class="ticker"><span>GRAPHIC DESIGN ✳</span><span>PHOTOGRAPHY ✳</span><span>VISUAL STORIES ✳</span><span>PRINT & DIGITAL ✳</span><span>GRAPHIC DESIGN ✳</span></div>
-
-    <section id="projekty">
-      <div class="wrap">
-        <div class="section-head">
-          <div><div class="kicker">Výber z tvorby / 01</div><h2>Vybrané projekty<span style="color:var(--orange)">.</span></h2></div>
-          <p class="section-note">Každý projekt je priestor na hľadanie nápadu, hranie sa s detailmi a vytvorenie vlastného vizuálneho príbehu.</p>
-        </div>
-        <div class="work-grid">
-          <a class="project" href="#kontakt"><div class="graphic"><b>AB</b></div><div class="project-label"><strong>Vizuálna identita</strong><small>Branding · Logo · Print</small></div></a>
-          <a class="project" href="#kontakt"><div class="graphic"><b>FORM<br>FOLLOWS</b></div><div class="project-label"><strong>Editorial & layout</strong><small>Katalógy · Publikácie</small></div></a>
-          <a class="project" href="#kontakt"><div class="graphic"><b>GOOD<br>MOOD</b></div><div class="project-label"><strong>Packaging design</strong><small>Obaly · Etikety</small></div></a>
-          <a class="project" href="#kontakt"><div class="graphic"><b>MAKE<br>IT POP!</b></div><div class="project-label"><strong>Kampaň & plagáty</strong><small>Digitál · Tlačoviny</small></div></a>
-        </div>
-        <p style="font-size:11px;color:var(--muted);margin-top:18px">Ukážkové grafické plochy – pred zverejnením ich nahradíme tvojimi skutočnými projektmi a fotografiami.</p>
-      </div>
-    </section>
-
-    <section class="about" id="o-mne">
-      <div class="wrap about-grid">
-        <div class="about-mark" aria-label="KABKA"></div>
-        <div>
-          <div class="kicker">Niečo o mne / 02</div>
-          <h2>Za každým<br>vizuálom je príbeh.</h2>
-          <p class="about-text">Som grafická dizajnérka, ktorú baví premieňať nápady na vizuálnu podobu. Venujem sa tvorbe log, vizuálnej identity, plagátov, katalógov, obalov a tlačových dát. Blízka je mi aj fotografia a hľadanie zaujímavých kompozícií.</p>
-          <p class="about-text">Mám rada čistý dizajn, premyslené detaily a riešenia, ktoré fungujú nielen na obrazovke, ale aj v tlači.</p>
-          <div class="services" id="sluzby">
-            <div class="service"><b>Grafický dizajn</b><span>Logá, identita, plagáty a vizuály.</span></div>
-            <div class="service"><b>Print & layout</b><span>Katalógy, obaly, etikety a tlačové dáta.</span></div>
-            <div class="service"><b>Fotografia</b><span>Fotografie, kompozícia a vizuálne príbehy.</span></div>
+        <div class="hero-photo fade-up" style="animation-delay:150ms">
+          <div class="photo-frame r-2-3">
+            <img src="/assets/foto/05-slnecnica-portret.jpg" alt="Portrét ženy so slnečnicou v poli slnečníc">
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="kontakt" class="contact">
-      <div class="wrap contact-grid">
-        <div>
-          <div class="kicker">Máš nápad? / 03</div>
-          <h2>Poďme niečo<br>vytvoriť<span style="color:var(--orange)">.</span></h2>
-          <p>Napíš mi, ak máš projekt, otázku alebo len chuť porozprávať sa o vizuálnom nápade.</p>
-        </div>
-        <div>
-          <div class="eyebrow" style="color:#b6b5ad">Kontakt</div>
-          <a class="contact-link" href="mailto:kabkapd@gmail.com">kabkapd@gmail.com ↗</a>
-          <div class="socials">
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram ↗</a>
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook ↗</a>
+      <section class="strip">
+        <div class="strip-head">
+          <div>
+            <p class="eyebrow">Portfólio</p>
+            <h2 class="display">Moje práce nájdete na <span class="marker">Instagrame</span></h2>
           </div>
+          <a class="handle-link" href="https://www.instagram.com/kabkapd" target="_blank" rel="noreferrer">
+            @kabkapd
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+        <a class="strip-grid" href="https://www.instagram.com/kabkapd" target="_blank" rel="noreferrer" aria-label="Otvoriť portfólio na Instagrame">
+          <div class="photo-frame r-square"><img src="/assets/foto/01-svadba-luky-katka.jpg" alt="Novomanželia sa bozkávajú na svadbe" loading="lazy"></div>
+          <div class="photo-frame r-square"><img src="/assets/foto/03-rodina-objatie.jpg" alt="Mama objíma dve dcéry v žltých mikinách" loading="lazy"></div>
+          <div class="photo-frame r-square"><img src="/assets/foto/04-tehulka-ocakavanie.jpg" alt="Tehotná žena v jesennom lese drží fotku z ultrazvuku" loading="lazy"></div>
+        </a>
+      </section>
+
+      <section class="cards">
+        <a class="card" href="/grafika.html">
+          <div>
+            <p class="card-title display">Grafika</p>
+            <p class="card-note">Logá, obaly, tlačoviny</p>
+          </div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a>
+        <a class="card" href="/fotografie.html">
+          <div>
+            <p class="card-title display">Fotografie</p>
+            <p class="card-note">Svadby, rodiny, portréty</p>
+          </div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a>
+        <a class="card" href="/kontakt.html">
+          <div>
+            <p class="card-title display">Kontakt</p>
+            <p class="card-note">kabkapd@gmail.com</p>
+          </div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap row">
+        <p style="margin:0">© 2026 KABKA photography &amp; design</p>
+        <div class="links">
+          <a href="https://www.instagram.com/kabkapd" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="mailto:kabkapd@gmail.com">kabkapd@gmail.com</a>
         </div>
       </div>
-    </section>
-  </main>
-  <footer><div class="wrap"><span>© <span id="year"></span> KABKA Photography & Design</span><span>Vytvorené s citom pre detail ✳</span></div></footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+  </div>
 </body>
 </html>
