@@ -124,6 +124,7 @@ main {
 }
 
 .brand img {
+  flex-shrink: 0;
   height: 2.25rem;
   width: 2.25rem;
   object-fit: contain;
@@ -161,6 +162,26 @@ main {
   text-transform: uppercase;
   color: var(--muted-ink);
   transition: color 0.3s var(--ease-soft);
+}
+
+@media (max-width: 639px) {
+  .site-nav {
+    gap: 0.75rem;
+  }
+  .nav-link {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+  }
+}
+
+@media (max-width: 359px) {
+  .site-nav {
+    gap: 0.5rem;
+  }
+  .nav-link {
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+  }
 }
 
 .nav-link::after {
@@ -383,7 +404,13 @@ main {
 
 @media (min-width: 640px) {
   .cards {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -586,6 +613,103 @@ main {
   color: var(--ink);
 }
 
+/* ---------- úspechy ---------- */
+
+.ach-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.ach {
+  display: grid;
+  gap: 1.5rem;
+  padding-block: 2.5rem;
+  border-bottom: 1px solid var(--line);
+  animation: fade-up 0.9s var(--ease-soft) both;
+}
+
+@media (min-width: 640px) {
+  .ach {
+    grid-template-columns: 12rem 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .ach {
+    grid-template-columns: 6rem 14rem 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.ach-year {
+  display: none;
+  margin: 0;
+  font-size: 2.25rem;
+}
+
+@media (min-width: 768px) {
+  .ach-year {
+    display: block;
+  }
+  .ach-year-inline {
+    display: none;
+  }
+}
+
+.ach-img {
+  width: 100%;
+  max-width: 20rem;
+  align-self: start;
+}
+
+@media (min-width: 640px) {
+  .ach-img {
+    max-width: none;
+  }
+}
+
+.ach-img img {
+  height: auto;
+}
+
+.ach .eyebrow {
+  margin: 0;
+}
+
+.ach h2 {
+  margin: 0.75rem 0 0;
+  font-size: clamp(1.875rem, 4vw, 2.25rem);
+}
+
+.ach p.muted {
+  margin: 1rem 0 0;
+  max-width: 36rem;
+  line-height: 1.65;
+}
+
+.ach-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.ach-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.ach-links svg {
+  width: 1rem;
+  height: 1rem;
+  color: var(--muted-ink);
+}
+
 /* ---------- footer ---------- */
 
 .site-footer {
@@ -612,7 +736,8 @@ main {
 
 .site-footer .links {
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
 }
 
 .site-footer a:hover {
