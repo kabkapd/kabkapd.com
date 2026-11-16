@@ -105,9 +105,10 @@ main {
 
 .site-header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1.25rem 1rem;
   padding-block: 1.5rem;
 }
 
@@ -133,13 +134,6 @@ main {
 .brand .word {
   font-family: "Instrument Serif", ui-serif, Georgia, serif;
   font-size: 1.5rem;
-  display: none;
-}
-
-@media (min-width: 640px) {
-  .brand .word {
-    display: inline;
-  }
 }
 
 .site-nav {
@@ -166,7 +160,11 @@ main {
 
 @media (max-width: 639px) {
   .site-nav {
-    gap: 0.75rem;
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.5rem;
+    white-space: nowrap;
   }
   .nav-link {
     font-size: 0.68rem;
@@ -771,4 +769,77 @@ main {
   .handle-link svg {
     transition: none;
   }
+}
+
+/* ---------- niečo o mne ---------- */
+
+.text-link {
+  color: var(--ink);
+  font-weight: 600;
+  text-underline-offset: 4px;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.about {
+  display: grid;
+  gap: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .about {
+    grid-template-columns: 1.15fr 1fr;
+    gap: 5rem;
+  }
+}
+
+.about-intro {
+  margin: 0;
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  line-height: 1.1;
+}
+
+.about-text p {
+  max-width: 36rem;
+  line-height: 1.7;
+  color: var(--muted-ink);
+}
+
+.about-text p.about-intro {
+  color: var(--ink);
+}
+
+.about-sign {
+  margin-top: 2rem;
+  font-family: "Instrument Serif", ui-serif, Georgia, serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--ink) !important;
+}
+
+.about-video {
+  align-self: start;
+}
+
+.about-video .frame {
+  aspect-ratio: 16 / 9;
+}
+
+.about-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.about-video .caption {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--muted-ink);
+}
+
+.about-video .btn {
+  margin-top: 2.5rem;
 }
